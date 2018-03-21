@@ -2,7 +2,7 @@
 // Select size input
 
 // When size is submitted by the user, call makeGrid()
-let pixelCanvas = $('#pixelCanvas');
+
 
 function makeGrid(row, col) {
     //clears screen if grid exists
@@ -15,17 +15,18 @@ function makeGrid(row, col) {
     for(let c = 1; c <= col; c++){
         $('tr').append('<td></td>');
     };
-};
+}
 
 $(document).ready(function(){
     let color;
+    let pixelCanvas = $('#pixelCanvas');
 
     $('#sendVals').on('click', function(evt){
         //get new values and create grid
         evt.preventDefault();
         let rows, columns;
         rows = $('#inputHeight').val();
-        columns = $('#inputWeight').val();
+        columns = $('#inputWidth').val();
 
         makeGrid(rows, columns);
     });
@@ -41,6 +42,6 @@ $(document).ready(function(){
 
     $('#clearGrid').click(function(){
         //reverts entire grid to white
-       $('td').css('background-color', '#fff');
+       $('td').css('background-color', 'transparent');
     });
 });
