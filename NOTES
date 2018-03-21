@@ -1,0 +1,34 @@
+NOTES
+
+3/18 Last night, I was having an issue with my columns variable being undefinded and not being factored into the grid drawing. I used an each to try to get the <td> tags added. It worked but I always got a square. I couldn't get a width different from the height. Slept on it and guess what it was. I didn't have the # in front of the ID name. My god. I'm better than this, I have to be.
+
+But now that I have the grid working, I can concentrate on the other parts of this. I might even have time to refactor!
+
+Next part, to get the color picker to actually save the color and make it accesible. Still undefined. Must do some reading.
+
+3/20 I got a version of the color picker working finally.
+I was setting up an event handler and trying to store the value, but it wouldn't store in a place that I could use it in another event handler.
+I need to find out why I can't do this.
+
+I tried a click event, then I did a change event and got the value, but I couldn't use it after the event was over. I did learn that the .change event is used for inputs like this as well as checkboxes, select boxes and radio buttons, which makes sense. I'll chalk it up to being tired and not wanting to read documentation last night.
+
+So instead, I just put the color picker in the click a cell event. If I understand correctly, I can just get the value and not have to put an event listener on the color picker. It ended up being:
+
+color = $('#colorPicker').val();
+
+I saw people doing all sorts of stuff to get this. I saw some vanilla JS that did something besides just get the value. Their code looked way more advanced than mine. Maybe I'll understand it later.
+
+One thing I'm proud of is that I instinctively used $(this) to target the cell that was clicked so the whole grid wouldn't change color. I had thought of that when I was trying to psuedocode and it actually worked, so I'm happy about that.
+
+3/20 Changed erase table button to a clear grid button that leaves the grid intact, mads a couple of jquery hooks but some of them don't work. Whatever I'll go with what works for now instead of making everything a variable.
+
+The basic functionality is there. I need to upload it to Github and then refactor. Then I'll try to make it nicer looking and add a another feature or two. But wow, I got this running in a few days.
+
+I want to do some research to answer some why questions, like why didn't this line of code work. That's going to bug me if I don't know the answer.
+
+FIND THE ANSWERS
+why $('td') won't work as a handle
+how to do conditional test for color check and remove grid
+    instead of running remove whether there's a grid or not
+
+when and here to put let and const instead of var
