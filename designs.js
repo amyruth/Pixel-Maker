@@ -32,12 +32,10 @@ $(document).ready(function(){
     });
 
     pixelCanvas.on('click', 'td', function(color){
-        //placeholder to show event handler is live
         //grabs color value and applies it to specific td element
-        console.log('you clicked a cell');
-        console.log($(this).css('background-color'));
         color = $('#colorPicker').val();
         $(this).css('background-color', color);
+        console.log($(this).css('background-color'));
     });
 
     $('#clearGrid').click(function(){
