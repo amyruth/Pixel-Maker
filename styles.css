@@ -1,9 +1,11 @@
 body {
     text-align: center;
+    background-image: url(vintage-polka-dot-2316.png);
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
-    font-family: Monoton;
+    font-family: 'Comfortaa', cursive;
     font-size: 70px;
     margin: 0.2em;
 }
@@ -25,6 +27,7 @@ td {
 table {
     border-collapse: collapse;
     margin: 0 auto;
+    background-color: #fff;
 }
 
 tr {
