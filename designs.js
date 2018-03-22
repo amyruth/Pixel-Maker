@@ -18,8 +18,11 @@ function makeGrid(row, col) {
 }
 
 $(document).ready(function(){
+    const clearGrid = $('#clearGrid');
+    const clearCell = $('#clearCell');
+    const pixelCanvas = $('#pixelCanvas');
+    let eraserActive = false;
     let color;
-    let pixelCanvas = $('#pixelCanvas');
 
     $('#sendVals').on('click', function(evt){
         //get new values and create grid
@@ -35,11 +38,27 @@ $(document).ready(function(){
         //grabs color value and applies it to specific td element
         color = $('#colorPicker').val();
         $(this).css('background-color', color);
+        $(this).addClass('filled');
         console.log($(this).css('background-color'));
+
+        if(eraserActive){
+            $(this).css('background-color', 'transparent');
+        }
     });
 
-    $('#clearGrid').click(function(){
+    clearGrid.click(function(){
         //reverts entire grid to white
        $('td').css('background-color', 'transparent');
     });
+
+    clearCell.click(function(){
+        if(!eraserActive){
+            eraserActive = true;
+            console.log(eraserActive);
+        }else{
+            eraserActive = false;
+            console.log(eraserActive);
+        };
+    });
+
 });
