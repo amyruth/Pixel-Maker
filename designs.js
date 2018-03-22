@@ -19,7 +19,7 @@ function makeGrid(row, col) {
 
 $(document).ready(function(){
     const clearGrid = $('#clearGrid');
-    const clearCell = $('#clearCell');
+    const eraseCell = $('#eraseCell');
     const pixelCanvas = $('#pixelCanvas');
     let eraserActive = false;
     let color;
@@ -40,7 +40,7 @@ $(document).ready(function(){
         $(this).css('background-color', color);
         $(this).addClass('filled');
         console.log($(this).css('background-color'));
-
+        //works when eraser button is clicked
         if(eraserActive){
             $(this).css('background-color', 'transparent');
         }
@@ -51,12 +51,15 @@ $(document).ready(function(){
        $('td').css('background-color', 'transparent');
     });
 
-    clearCell.click(function(){
+    eraseCell.click(function(){
+        //switches eraser on and off
         if(!eraserActive){
             eraserActive = true;
+            $(this).text('Eraser: ON');
             console.log(eraserActive);
         }else{
             eraserActive = false;
+            $(this).text('Eraser: OFF');
             console.log(eraserActive);
         };
     });
