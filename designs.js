@@ -38,7 +38,6 @@ $(document).ready(function(){
         //grabs color value and applies it to specific td element
         color = $('#colorPicker').val();
         $(this).css('background-color', color);
-        $(this).addClass('filled');
         console.log($(this).css('background-color'));
         //works when eraser button is clicked
         if(eraserActive){
