@@ -1,8 +1,4 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
+// v2 has right click to erase option
 
 function makeGrid(row, col) {
     //clears screen if grid exists
@@ -19,9 +15,7 @@ function makeGrid(row, col) {
 
 $(document).ready(function(){
     const clearGrid = $('#clearGrid');
-    const eraseCell = $('#eraseCell');
     const pixelCanvas = $('#pixelCanvas');
-    let eraserActive = false;
     let color;
 
     $('#sendVals').on('click', function(evt){
@@ -38,6 +32,7 @@ $(document).ready(function(){
         //grabs color value and applies it to specific td element
         color = $('#colorPicker').val();
         $(this).css('background-color', color);
+        $(this).addClass('filled');
         console.log($(this).css('background-color'));
         //works when eraser button is clicked
         if(eraserActive){
@@ -50,17 +45,10 @@ $(document).ready(function(){
        $('td').css('background-color', 'transparent');
     });
 
-    eraseCell.click(function(){
-        //switches eraser on and off
-        if(!eraserActive){
-            eraserActive = true;
-            $(this).text('Eraser: ON');
-            console.log(eraserActive);
-        }else{
-            eraserActive = false;
-            $(this).text('Eraser: OFF');
-            console.log(eraserActive);
-        };
+   //right-click to erase care of @DN_1524. Thank you! 
+   pixelCanvas.on('contextmenu', 'td', function (e){
+        e.preventDefault();
+        $(this).css('background-color', 'transparent');
     });
 
 });
