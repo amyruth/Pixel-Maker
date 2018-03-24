@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-image: url(vintage-polka-dot-2316.png);
+    background-image: url('https://s18.postimg.org/u29yb86e1/vintage-polka-dot-2316.png');
     background-color: #FFE4C4;
     font-family: 'Open Sans', sans-serif;
 }
@@ -48,6 +48,6 @@ input[type=number] {
     outline: none;
 }
 
-label{
+label, #infoText{
     font-weight: 800;
 }
