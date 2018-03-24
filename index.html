@@ -15,11 +15,11 @@
     <form id="sizePicker">
         <label for="inputHeight">
             Grid Height:
-            <input type="number" id="inputHeight" name="height" min="1" value="1">
+            <input type="number" id="inputHeight" name="height" min="1" value="10">
         </label>
         <label for="inputWidth">
             Grid Width:
-            <input type="number" id="inputWidth" name="width" min="1" value="1">
+            <input type="number" id="inputWidth" name="width" min="1" value="10">
         </label>
 
         <input type="submit" id="sendVals">
@@ -29,7 +29,9 @@
     <input type="color" id="colorPicker">
 
     <button type='submit' id='clearGrid'>Clear Grid</button>
-    <button type='submit' id='eraseCell'>Eraser: OFF</button>
+    <div id='infoText'>
+        Right-click to erase
+    </div>
 
     <h2>Design Canvas</h2>
     <table id="pixelCanvas"></table>
